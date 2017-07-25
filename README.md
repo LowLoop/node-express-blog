@@ -1,2 +1,2 @@
-# root
-I'm from china.This is my study project
+# node-express-blog
+express,sequelize,mysql...
