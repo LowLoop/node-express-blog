@@ -1,0 +1,22 @@
+//
+   Created by j.frank on 2017/4/1 0001.
+nav(class="navbar navbar-inverse navbar-fixed-top",role="navigation")
+    div(class="container")
+        div(class="navbar-header")
+            button(type="button",class="navbar-toggle collapsed",data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
+                span(class="sr-only") Toggle drop-down menu
+                span(class="icon-bar")
+                span(class="icon-bar")
+                span(class="icon-bar")
+            span(class="navbar-brand",style="font-size: 30px;") low
+        div(class="navbar-collapse collapse",id="navbar",data-expanded="false",style="height:1px;")
+            ul(class="nav navbar-nav")
+                li(class="active")
+                    a(href="/",class="nav-menu",role="button")
+                        img(src="#{ctx}/images/icon/icon_index.svg",class="navbar-icon")
+                        span 首页
+                li
+                    a(href="",class="nav-menu-fm",role="button",data-toggle="tab")
+                        img(src="#{ctx}/images/icon/fm.svg",class="navbar-icon")
+                        span FM
+            include navbarRight

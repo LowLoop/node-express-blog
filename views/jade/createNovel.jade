@@ -1,0 +1,34 @@
+//
+   Created by j.frank on 2017/5/2 0002.
+doctype html
+html
+    head
+        //title= title
+        //link(rel='stylesheet', href='/stylesheets/style.css')
+        title #{title}
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,Chrome=1")
+        include webIcon
+        include bootstrap
+        include layer
+        include bootstrapValidator
+        script(src="#{ctx}/javascripts/j_validator.js")
+        script(src="#{ctx}/javascripts/j_signInUp.js")
+        link(rel="stylesheet",href="#{ctx}/css/index.css")
+    body
+        include nav
+        include message
+        div(class="container content")
+            div(class="row novelRow")
+                form#novelForm.form-horizontal(method='post', action='#{ctx}/novel/createNovel')
+                    input(type="hidden",name="userId",value="#{user.id}")
+                    .form-group
+                        .input-group
+                            label.input-group-addon(for='novelTitle') 标题
+                            input#novelTitle.form-control(placeholder='请填写您的标题', type='text', name='novelTitle')
+                            .input-group-addon.color-red *
+                    .form-group
+                        label.input-group-addon(for='novelContent', style='border-radius:5px;') 内容
+                        textarea#novelContent.form-control(name='novelContent', rows='10', placeholder='请填写内容.')
+                    .form-group
+                        button.btn.btn-success.btn-block(type='submit') 发表

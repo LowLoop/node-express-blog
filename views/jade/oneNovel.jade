@@ -1,0 +1,48 @@
+//
+   Created by j.frank on 2017/6/15 0015.
+doctype html
+html
+    head
+        //title= title
+        //link(rel='stylesheet', href='/stylesheets/style.css')
+        title #{title}
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,Chrome=1")
+        include webIcon
+        include bootstrap
+        include layer
+        include bootstrapValidator
+        script(src="#{ctx}/javascripts/j_validator.js")
+        script(src="#{ctx}/javascripts/j_signInUp.js")
+        link(rel="stylesheet",href="#{ctx}/css/index.css")
+    body
+        include nav
+        include message
+        div(class="container content")
+            ul.breadcrumb
+                li
+                    a(href='#{ctx}') 首页
+                li
+                    a(href='javascript:void(0);') 某篇文章
+            .row
+                div(class="col-md-12")
+                    div(class="ibox")
+                        div(class="ibox-content")
+                            a(href="article.html",class="btn-link")
+                                h2 #{novel.title}
+                            div(class="small m-b-xs")
+                                strong 作者: #{novel.user.loginName}
+                                span(class="text-muted")
+                                    i(class="fa fa-clock-o") 发布时间: #{moment(novel.created_at).format('YYYY-MM-DD HH:mm:ss')}
+                            p #{novel.content}
+                            div(class="row")
+                                div(class="col-md-6")
+                                    h5 标签：
+                                    span.label.label-success Success
+                                    span.label.label-info info
+                                div(class="col-md-6")
+                                    div(class="small text-right")
+                                        h5 状态：
+                                        div
+                                            i(class="fa fa-comments-o") xx 评论
+                                        i(class="fa fa-eye") xx 浏览

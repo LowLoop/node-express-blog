@@ -1,0 +1,138 @@
+//
+   Created by j.frank on 2017/4/1 0001.
+div(class="container content")
+    - var content = '我是内容'; var content2 = "我是内容2"
+    div(class="row") #{ctx}/xx.com
+        | #{content2}
+        | 123213
+        | #{user}
+
+    div(class="carousel slide bannerBox",id="carousel2")
+
+        - if (!user)
+            div(class="login_main")
+                div(class="tabs-container")
+                    ul(class="nav nav-tabs")
+                        li(class="active")
+                            a(data-toggle="tab",href="#tab-1",aria-expanded="true") 登陆
+                        li
+                            a(data-toggle="tab",href="#tab-2",aria-expanded="false") 注册
+                div(class="tab-content")
+                    div(id="tab-1",class="tab-pane active")
+                        div(class="panel-body banner-sign-box")
+                            form.form-horizontal(method='post', action='/signin', name="loginForm")
+                                // 下面这个div必须要有，插件根据这个进行添加提示
+                                .form-group
+                                    label.col-md-3.control-label.banner-sign-box-control
+                                        i.glyphicon.glyphicon-user
+                                        |                 用户
+                                    .col-md-9.banner-sign-box-control
+                                        .input-group
+                                            input.form-control(type='text', name='inUserName')
+                                            .input-group-addon *
+                                .form-group
+                                    label.col-md-3.control-label.banner-sign-box-control
+                                        i.glyphicon.glyphicon-lock
+                                        |                 密码
+                                    .col-md-9.banner-sign-box-control
+                                        .input-group
+                                            input.form-control(type='password', name='inUserPasd')
+                                            .input-group-addon *
+                                .form-group
+                                    .col-md-12
+                                        button.btn.btn-pink.btn-block(type='submit') 登录
+                    div(id="tab-2",class="tab-pane")
+                        div(class="panel-body banner-sign-box")
+                            form.form-horizontal(method='post', action='/signup', name="registerForm")
+                                // 下面这个div必须要有，插件根据这个进行添加提示
+                                .form-group
+                                    label.col-md-3.control-label.banner-sign-box-control
+                                        i.glyphicon.glyphicon-user
+                                        |                 用户
+                                    .col-md-9.banner-sign-box-control
+                                        .input-group
+                                            input.form-control(type='text', name='userName')
+                                            .input-group-addon *
+                                .form-group
+                                    label.col-lg-3.control-label.banner-sign-box-control
+                                        i.glyphicon.glyphicon-lock
+                                        |                 密码
+                                    .col-md-9.banner-sign-box-control
+                                        .input-group
+                                            input.form-control(type='password', name='userPasd')
+                                            .input-group-addon *
+                                .form-group
+                                    label.col-md-3.control-label.banner-sign-box-control
+                                        i.glyphicon.glyphicon-envelope
+                                        |                 邮箱
+                                    .col-md-9.banner-sign-box-control
+                                        input.form-control(type='text', name='email')
+                                .form-group
+                                    .col-md-12
+                                        button.btn.btn-success.btn-block(type='submit') 注册
+
+        //上面是登录/注册box
+        ol(class="carousel-indicators")
+            li(data-slide-to="0",data-target="#carousel2",class="active")
+            li(data-slide-to="1",data-target="#carousel2")
+            li(data-slide-to="2",data-target="#carousel2",class="")
+        div(class="carousel-inner")
+            div(class="item active")
+                img(alt="image",class="img-responsive",src="images/11.jpg")
+                div(class="carousel-caption")
+                    p 第一张
+            div(class="item ")
+                img(alt="image",class="img-responsive",src="images/22.jpg")
+                div(class="carousel-caption")
+                    p 第二张
+            div(class="item")
+                img(alt="image",class="img-responsive",src="images/33.jpg")
+                div(class="carousel-caption")
+                    p 第三张
+        a(data-slide="prev",href="carousel.html#carousel2",class="left carousel-control")
+            span(class="icon-prev")
+        a(data-slide="next",href="carousel.html#carousel2",class="right carousel-control")
+            span(class="icon-next")
+    //下面是novel列表
+    div(class="wrapper wrapper-content animated fadeInRight blog index-novel-box")
+        - for (var i = 0; i < novels.length; ++i) {
+            div(class="row novel-brief")
+                div(class="col-md-12")
+                    div(class="ibox")
+                        div(class="ibox-content")
+                            a(href="/novel/oneNovel?novelId=#{novels[i].id}",class="btn-link")
+                                h2 #{novels[i].title}
+                            div(class="small m-b-xs")
+                                strong 作者: #{novels[i].user.loginName}
+                                span(class="text-muted")
+                                    i(class="fa fa-clock-o") 发布时间: #{moment(novels[i].created_at).format('YYYY-MM-DD HH:mm:ss')}
+                            p #{novels[i].content}
+                            div(class="row")
+                                div(class="col-md-6")
+                                    h5 标签：
+                                    span.label.label-success Success
+                                    span.label.label-info info
+                                div(class="col-md-6")
+                                    div(class="small text-right")
+                                        h5 状态：
+                                        div
+                                            i(class="fa fa-comments-o") XX
+                                        i(class="fa fa-eye") 呱呱
+            hr
+        - }
+
+    ul.pagination(data-current-page="#{pageObj.curPage}")
+        li
+            a(id="pagePrev") «
+        - for (var i = 1; i <= pageObj.pageSize; ++i) {
+        -if (i == 1 && pageObj.curPage == 1)
+            li(class="active")
+                a(href='/?page=#{i}') #{i}
+        -else
+            li
+                a(href='/?page=#{i}') #{i}
+        - }
+        li
+            a(id="pageNext") »
+        li(class="disabled controls")
+            a 当前#{pageObj.curPage}页,总共#{pageObj.pageSize}页.总共#{pageObj.totalSize}条数据

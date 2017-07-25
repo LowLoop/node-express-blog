@@ -1,0 +1,130 @@
+//
+   Created by j.frank on 2017/6/6 0006.
+extends ../layout
+
+block content
+    body
+        include signInUpLayer
+        include nav
+        include message
+
+        .wrapper.wrapper-content
+            .row.animated.fadeInRight
+                .col-md-4
+                    .ibox.float-e-margins
+                        .ibox-title
+                            h5 个人资料
+                        div
+                            .ibox-content.no-padding.border-left-right
+                                - if (userInfo.headPortrait)
+                                    img.img-circle.img-responsive.center-block(alt='image', src='#{ctx}#{userInfo.headPortrait}')
+                                - else
+                                    img.img-circle.img-responsive(alt='image', src='#{ctx}/images/22.jpg')
+                                input(id="userId",type="hidden",value="#{userInfo.id}")
+                                button.btn.btn-pink.center-block(type="button",data-toggle="modal",data-target="#updateHeadPortraitBox") 更换头像
+                            .ibox-content.profile-content
+                                h4
+                                    strong #{userInfo.loginName}
+                                h5
+                                    | 关于我
+                                p
+                                    | XXX后面有需求再做吧.
+                                .row.m-t-lg
+                                    .col-sm-4
+                                        h5
+                                            strong 多少,要查询count
+                                            |  文章
+                    .ibox.float-e-margins
+                        .ibox-title
+                            h5 最新动态
+                            .ibox-tools
+                                a.collapse-link
+                                    i.fa.fa-chevron-up
+                                a.close-link
+                                    i.fa.fa-times
+                        .ibox-content
+                            div
+                                .feed-activity-list
+                                    .feed-element
+                                        .media-body
+                                            small.pull-right 5分钟前
+                                            strong XXX
+                                            |  发布了XXX 这里也要查..
+                                            br
+                                            small.text-muted 今天 xx 来自 XXX
+
+                                button.btn.btn-pink.btn-block.m
+                                    i.fa.fa-arrow-down
+                                    |  显示更多
+                .col-md-8
+                    .ibox.float-e-margins
+                        .ibox-title
+                            h5 修改资料
+                            .ibox-tools
+                                a.collapse-link
+                                    i.fa.fa-chevron-up
+                                a.close-link
+                                    i.fa.fa-times
+                        .ibox-content
+                            form.form-horizontal(enctype='multipart/form-data')
+                                .form-group
+                                    label.col-sm-2.control-label 登录名
+                                    .col-sm-10
+                                        p.form-control-static #{userInfo.loginName}
+                                .form-group
+                                    label.col-sm-2.control-label(for='nickName') 昵称
+                                    .col-sm-10
+                                        input#nickName.form-control(type='text', name='nickName', placeholder='昵称')
+                                .form-group
+                                    label.col-sm-2.control-label(for='email') 邮箱
+                                    .col-sm-10
+                                        input#email.form-control(type='email', name='email', placeholder='邮箱')
+                                .form-group
+                                    label.col-sm-2.control-label(for='newPasd') 新密码
+                                    .col-sm-10
+                                        input#newPasd.form-control(type='password', name='newPasd', placeholder='新密码')
+                                .form-group
+                                    label.col-sm-2.control-label(for='checkNewPasd') 重复新密码
+                                    .col-sm-10
+                                        input#checkNewPasd.form-control(type='password', name='checkNewPasd', placeholder='重复新密码')
+                                .form-group
+                                    .col-md-12
+                                        button.btn.btn-pink.btn-block(type="submit",id="updateUserInfo") 保存
+
+
+        #updateHeadPortraitBox.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
+            .modal-dialog
+                .modal-content.animated.bounceInRight
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal')
+                            span(aria-hidden='true') ×
+                            span.sr-only 关闭
+                        h4.modal-title 上传头像
+                    .modal-body
+                        div(style="height:300px;")
+                            // 弹窗与裁切图
+                            .cover
+                                img#Img1(alt='')
+                            .preview.text-center
+                                .preview-hint 预览
+                                // 裁切范围重绘canvas
+                                canvas(id="myCanva",width="100",height="100") 您的浏览器不支持 HTML5 canvas 标签。
+                                // <canvas id="myCanva" style="width:200px;height:200px;float:right;overflow:hidden;border:1px solid;border-radius:50%;margin-top:100px;"></canvas>
+                    .modal-footer
+                        input#upLoadImg1.pull-left(type='file', name='upLoadImg1')
+                        button#btnSave.pull-right.btn.btn-pink 保存
+                        //button.btn.btn-white(type='button', data-dismiss='modal') 关闭
+        #updatePasd.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
+            .modal-dialog
+                .modal-content.animated.bounceInRight
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal')
+                            span(aria-hidden='true') ×
+                            span.sr-only 关闭
+                        h4.modal-title 更改密码
+                    .modal-body
+
+                    .modal-footer
+                        button#btnUpdatePasd.pull-right.btn.btn-pink 保存
+        include goHome
+        include backTop

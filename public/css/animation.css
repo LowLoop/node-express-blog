@@ -1,0 +1,16 @@
+/**
+ * Created by j.frank on 2017/5/16 0016.
+ */
+canvas {
+    transition: opacity 1s,margin 1s;
+    -moz-transition: opacity 1s,margin 1s; /* Firefox 4 */
+    -webkit-transition: opacity 1s,margin 1s; /* Safari 和 Chrome */
+    -o-transition: opacity 1s,margin 1s; /* Opera */
+    z-index: 99999999999999999;
+}
+#canvas_c {
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title %></title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle drop-down menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="navbar-brand" style="font-size: 30px;">low</span>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar" data-expanded="false" style="height:1px;">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="#tab1" role="button" data-toggle="tab">
+                                    <img src="images/icon/icon_index.svg" class="navbar-icon">
+                                    <span>首页</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" role="button" data-toggle="tab">
+                                    <img src="images/icon/login.svg" class="navbar-icon-small">
+                                    <span>登陆</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" role="button" data-toggle="tab">
+                                    <img src="images/icon/register.svg" class="navbar-icon-small">
+                                    <span>注册</span>
+                                </a>
+                            </li>
+                        </ul><!-- 右侧注册登陆结束 -->
+
+                    </div>
+                </div>
+            </nav><!-- 导航条结束 -->
+        </ul><!-- nav-tabs完 -->
+    </div><!-- 顶部导航结束 -->
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="cl-md-7">
+            <div class="carousel slide" id="carousel2">
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel2" class="active"></li>
+                    <li data-slide-to="1" data-target="#carousel2"></li>
+                    <li data-slide-to="2" data-target="#carousel2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="image" class="img-responsive" src="images/1.jpg">
+                        <div class="carousel-caption">
+                            <p>This is simple caption 1</p>
+                        </div>
+                    </div>
+                    <div class="item ">
+                        <img alt="image" class="img-responsive" src="images/2.jpg">
+                        <div class="carousel-caption">
+                            <p>This is simple caption 2</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="image" class="img-responsive" src="images/3.jpg">
+                        <div class="carousel-caption">
+                            <p>This is simple caption 3</p>
+                        </div>
+                    </div>
+                </div>
+                <a data-slide="prev" href="carousel.html#carousel2" class="left carousel-control">
+                    <span class="icon-prev"></span>
+                </a>
+                <a data-slide="next" href="carousel.html#carousel2" class="right carousel-control">
+                    <span class="icon-next"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

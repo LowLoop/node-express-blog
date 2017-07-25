@@ -1,0 +1,8 @@
+//
+   Created by j.frank on 2017/4/25 0025.
+-if (info.length >= 1)
+    div(class="msg msg-success") #{info}
+        span(name="closeMsg",class="glyphicon glyphicon-remove",style="float:right;")
+- else if (err.length >= 1)
+    div(class="msg msg-err") #{err}
+        span(name="closeMsg",class="glyphicon glyphicon-remove",style="float:right;")

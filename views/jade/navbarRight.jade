@@ -1,0 +1,30 @@
+//
+   Created by j.frank on 2017/4/1 0001.
+//右侧注册登陆
+ul(class="nav navbar-nav navbar-right")
+  - if(user)
+    li
+      a(href="javascript:void(0);",class="dropdown-toggle nav-menu",role="button",data-toggle="dropdown")
+        - if(user.headPortrait)
+          img.img-circle.img-responsive.navbar-icon(alt='头像', src='#{ctx}#{user.headPortrait}',style="display:inline;")
+        span #{user.loginName}
+          b(class="caret")
+      ul(class="dropdown-menu animated fadeInRight m-t-xs")
+        li
+          a(class="J_menuItem",href="#{ctx}/user/profile?userId=#{user.id}") 个人资料
+        li(class="divider")
+        li
+          a(href="/signout") 安全退出
+    li
+      a(id="createNovel",href="#{ctx}/novel/createNovel",class="nav-menu",role="button")
+        span(class="icon-pencil")
+        span 发表文章
+  - else
+    li
+      a(class="nav-menu",role="button",data-toggle="modal",data-target="#loginModal")
+        img(src="#{ctx}/images/icon/login.svg",class="navbar-icon-small")
+        span #{login}
+    li
+      a(class="nav-menu",role="button",data-toggle="modal",data-target="#registerModal")
+        img(src="#{ctx}/images/icon/register.svg",class="navbar-icon-small")
+        span= register

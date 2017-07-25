@@ -1,0 +1,196 @@
+/**
+ * Created by j.frank on 2017/3/9 0009.
+ */
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: url("../images/icon/bg-container.png");
+}
+.bannerBox{
+    position: relative;
+}
+.login_main {
+    width: 300px;
+    height: 260px;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    margin-left: 200px;
+    z-index: 4;
+    background: hsla(0,0%,100%,.6);
+    overflow: auto;
+}
+
+.navbar-icon{
+    width: 30px;
+}
+.navbar-icon-small{
+    width: 15px;
+    height: 15px;
+}
+.navbar-icon-portrait{
+    width: 25px;
+    height: 25px;
+}
+a.nav-menu:hover{
+    background: #494949 !important;
+    padding-bottom: 12px !important;
+    border-bottom: 3px solid pink !important;
+}
+.nav-menu-fm:hover{
+    background: url("../images/icon/menu-hover.gif") #494949 bottom no-repeat !important;
+}
+ol li{
+    font-size: 16px;
+    padding-bottom: 6px;
+}
+/*p{
+    font-size: 16px;
+    color:#000000;
+    letter-spacing: 1px;
+}*/
+::selection{
+    background:hotpink;
+}
+::-moz-selection{
+    background: hotpink;
+}
+.content-font{
+    color: pink;
+    font-style: normal;
+}
+.sign-wrap{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+}
+.color-red{
+    color: red;
+}
+.content{
+    color: white;
+    background:rgba(58,63,61,0.6);
+    padding:15px;
+    margin-top: 30px;
+    overflow: auto;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.content div{
+    border-radius: 5px;
+}
+.msg{
+    color:white;
+    text-align: center;
+    width: 311px;
+    height: 66px;
+    line-height: 66px;
+    font-size: 24px;
+    border:1px solid white;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 2px 3px #888888; /* 老的 Firefox */
+    box-shadow: 2px 2px 3px #888888;
+    cursor: pointer;
+    position: fixed;
+    top: 60px;
+    right: 5px;
+    z-index: 99999;
+}
+.msg-success{
+    background: rgba(115,181,115,0.6);
+}
+.msg-err{
+    background: rgba(255,128,128,0.6);
+}
+.gohome {
+    position: fixed;
+    bottom: 10%;
+    right: 20px;
+    z-index: 100;
+}
+.gohome a {
+    height: 38px;
+    width: 38px;
+    display: block;
+    background: #2f4050;
+    padding: 9px 8px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    opacity: .5;
+}
+.bounceInUp {
+    -webkit-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    z-index: 100;
+}
+.gohome-icon:hover{
+    /*background: #0D1115;*/
+    background: deeppink;
+    cursor: pointer;
+}
+.btn-pink{
+    background: #F26D71;
+    border-color: #F283AC;
+    color: white;
+}
+.btn-pink:hover{
+    background: #F05B60;
+    color: white;
+}
+.btn-pink:active{
+    background: #ED3A3F;
+}
+.novelRow{
+    margin: 0px !important;
+}
+.back-top{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: none;
+}
+.back-to-top-icon{
+    background: url("../images/icon/back-to-top.png") center hsla(0,0%,100%,.4) no-repeat;
+}
+.back-to-top-icon:hover{
+    background: url("../images/icon/back-to-top.png") center pink no-repeat;
+}
+.banner-sign-box{
+    color: #666;
+    padding: 0px 10px 0px 2px;
+}
+.banner-sign-box .form-group{
+    margin: 10px auto;
+}
+.banner-sign-box-control{
+    padding: 1px;
+    text-align: center !important;
+}
+.index-novel-box{
+    /*background: rgba(0,0,0,.8);*/
+    /*background: hsla(0,0%,100%,.4);*/
+    /*background: transparent;*/
+    background:rgba(210,210,211,0.4);
+    color:#9f9e9e;
+    margin-top: 20px;
+    padding: 10px;
+}
+.index-novel-box p{
+    color: black;
+}
+.breadcrumb{
+    background: rgba(58,63,61,0.6);
+}

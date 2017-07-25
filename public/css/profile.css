@@ -1,0 +1,181 @@
+.wrapper {
+    padding: 0 20px
+}
+.wrapper-content {
+    padding: 20px
+}
+.ibox {
+    clear: both;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0
+}
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background:rgba(58,63,61,0.6);
+    /*border-color: #e7eaec;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;*/
+    /*border-style: solid solid none;*/
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px
+}
+.ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left
+}
+.ibox-content {
+    clear: both;
+    background-color: hsla(0,0%,100%,.7);
+    color: inherit;
+    padding: 15px 20px 20px;
+    border-color: #e7eaec;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    border-radius: 5px;
+}
+.border-left-right {
+    border-left: 1px solid #e7eaec;
+    border-right: 1px solid #e7eaec;
+    border-top: none;
+    border-bottom: none;
+}
+.no-padding {
+    padding: 0!important;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.profile-content {
+    border-top: none!important;
+}
+.ibox-content h1, .ibox-content h2, .ibox-content h3, .ibox-content h4, .ibox-content h5, .ibox-title h1, .ibox-title h2, .ibox-title h3, .ibox-title h4, .ibox-title h5 {
+    margin-top: 5px;
+}
+h3, h4, h5 {
+    margin-top: 5px;
+    font-weight: 600;
+}
+h4 {
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+}
+.m-t-lg {
+    margin-top: 30px;
+}
+.float-e-margins .btn {
+    margin-bottom: 5px;
+}
+.m {
+    margin: 15px;
+}
+.btn {
+    border-radius: 3px;
+}
+.feed-element:first-child {
+    margin-top: 0;
+}
+.feed-activity-list .feed-element {
+    border-bottom: 1px solid #e7eaec;
+}
+.feed-element, .media-body {
+    overflow: hidden;
+}
+.feed-element, .feed-element .media {
+    margin-top: 15px;
+}
+.feed-element {
+    padding-bottom: 15px;
+}
+.feed-element>.pull-left {
+    margin-right: 10px;
+}
+a {
+    cursor: pointer;
+}
+.feed-element, .media-body {
+    overflow: hidden;
+}
+.media-body, .sidebard-panel .feed-element, .sidebard-panel p {
+    font-size: 12px;
+}
+.media-body {
+    display: block;
+    width: auto;
+}
+.dropdown-messages-box img.img-circle, .feed-element img.img-circle {
+    width: 38px;
+    height: 38px;
+}
+.text-navy {
+    color: #1ab394;
+}
+.text-muted {
+    color: #888;
+}
+.feed-element .actions {
+    margin-top: 10px;
+}
+.ibox-tools {
+    display: inline-block;
+    float: right;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+}
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #c4c4c4;
+}
+
+.cover{
+    width:280px;
+    height:280px;
+    background: #FAFAFA;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+.preview {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    bottom: 0;
+}
+.preview .preview-hint {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    margin-top: -100px;
+}
+#myCanva{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    border:1px solid #d3d3d3;
+    border-radius:50%;
+    overflow: hidden;
+}
