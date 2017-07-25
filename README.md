@@ -2,6 +2,7 @@
 # 技术栈 express+sequelize+mysql
 ## 启动命令
 > npm start
+
 > 在webstorm里面导入项目之后.配置服务: 选择node.js,然后启动文件(javascript file)选择bin目录下的www文件.
 ## 在centOS上部署项目相关
 > 通过svn,git之类的工具将项目传到服务器上之后.如果通过命令启动服务会出现.关闭xShell之后服务就断开的问题.
