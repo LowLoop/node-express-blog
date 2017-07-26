@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
-var cors = require('cors');
+//var cors = require('cors');
 //var routes = require('./routes');
 
 //var ejs = require('ejs');//引入ejs
@@ -36,11 +36,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));//添加一个中间件,设置静态资源路径为public
 
+//允许跨域
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, access-token, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+  next();
+});
+
 //跨域
-app.use(cors({
+/*app.use(cors({
   origin:['http://localhost:3000'],//允许这个域访问
   methods:['GET','POST']//只允许这两种请求
-}));
+}));*/
 
 app.use(session({
   secret: 'low',
