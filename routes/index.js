@@ -24,10 +24,10 @@ var novelService = require('../service/NovelService');
       pageNo = 1;
     }
     console.log(novelCount);
-    pageObj.size = 2;
+    pageObj.size = 1;
     pageObj.totalSize = novelCount;
     pageObj.curPage = pageNo;
-    pageObj.pageSize = Math.ceil(novelCount/2);
+    pageObj.pageSize = Math.ceil(novelCount/1);
 
     res.render('index', {
       novels:novelList,
