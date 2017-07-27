@@ -3,11 +3,17 @@
 
 ## 项目结构
 > sequelizeConnectPool-- sequelize连接数据库配置
+
 > model-- 存放数据表的实体类
+
 > service-- 对应每个实体类的一些业务方法都塞在这里
+
 > view-- jade模板
+
 > routes-- 路由
+
 > middlewares-- 自己封装的一些中间件
+
 > public-- img,css之类的静态文件
 
 ## 启动命令
